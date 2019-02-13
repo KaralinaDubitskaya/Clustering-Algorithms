@@ -23,6 +23,7 @@ namespace k_means
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new ApplicationViewModel();
         }
 
         // Allow only digits and backspace to be entered into the text box.
@@ -33,11 +34,6 @@ namespace k_means
             {
                 e.Handled = true;
             }
-        }
-
-        private void BtnCalculate_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

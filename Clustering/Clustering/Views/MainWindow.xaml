@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:k_means"
         mc:Ignorable="d"
-        Title="k-means alghoritm" Height="500" Width="1000">
+        Title="Clustering algorithms" Height="500" Width="1000">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="849*"/>
@@ -25,9 +25,9 @@
         </Border>
         <Label Content="Number of points:" Grid.Column="1" HorizontalAlignment="Left" Margin="10, 0" Grid.Row="1" VerticalAlignment="Bottom" Height="25" Width="107"/>
         <Label Content="Number of classes:" Grid.Column="1" HorizontalAlignment="Left" Margin="10, 0" Grid.Row="3" VerticalAlignment="Bottom" Height="25" Width="110"/>
-        <Button Name="btnCalculate" Content="Calculate" Click="BtnCalculate_Click" Grid.Column="1" Margin="10, 12" Grid.Row="5" Background="LightSkyBlue"/>
-        <TextBox Name="tbNumOfPoints" Grid.Column="1" Margin="10, 6" Grid.Row="2" TextWrapping="Wrap" Text="30000" TextInput="TextBox_CheckNumericInput"/>
-        <TextBox Name="tbNumOfClasses" Grid.Column="1" Margin="10, 6" Grid.Row="4" TextWrapping="Wrap" Text="10" TextInput="TextBox_CheckNumericInput"/>
+        <Button Name="btnCalculate" Content="Calculate" Grid.Column="1" Margin="10, 12" Grid.Row="5" Background="LightSkyBlue"/>
+        <TextBox Name="tbNumOfPoints" Grid.Column="1" Margin="10, 6" Grid.Row="2" TextWrapping="Wrap" Text="30000" PreviewTextInput="TextBox_CheckNumericInput"/>
+        <TextBox Name="tbNumOfClasses" Grid.Column="1" Margin="10, 6" Grid.Row="4" TextWrapping="Wrap" Text="10" PreviewTextInput="TextBox_CheckNumericInput"/>
 
     </Grid>
 </Window>

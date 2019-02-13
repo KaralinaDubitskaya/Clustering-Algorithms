@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace k_means
 {
-    class ApplicationViewModel
+    public static class KMeans
     {
+
     }
 }

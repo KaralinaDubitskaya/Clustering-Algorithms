@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "k-means", "k-means\k-means.csproj", "{1BCD0AD6-5E24-4A18-A2B0-374C51754558}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clustering algorithms", "Clustering\Clustering algorithms.csproj", "{1BCD0AD6-5E24-4A18-A2B0-374C51754558}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "k-means", "k-means\k-means.csproj", "{F749FC99-038A-4082-A4BA-5ED46D14E09B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{1BCD0AD6-5E24-4A18-A2B0-374C51754558}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BCD0AD6-5E24-4A18-A2B0-374C51754558}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BCD0AD6-5E24-4A18-A2B0-374C51754558}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F749FC99-038A-4082-A4BA-5ED46D14E09B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F749FC99-038A-4082-A4BA-5ED46D14E09B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F749FC99-038A-4082-A4BA-5ED46D14E09B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F749FC99-038A-4082-A4BA-5ED46D14E09B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
