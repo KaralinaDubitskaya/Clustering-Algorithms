@@ -1,0 +1,33 @@
+﻿<Window x:Class="k_means.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:k_means"
+        mc:Ignorable="d"
+        Title="Clustering algorithms" Height="500" Width="1000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="849*"/>
+            <ColumnDefinition Width="145*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="82*"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="171*"/>
+        </Grid.RowDefinitions>
+        <Border BorderThickness="1" BorderBrush="SkyBlue" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="7" Grid.Row="0" Margin="10">
+            <Image Source="{Binding DrawingImage, Mode=OneWay}" />
+        </Border>
+        <Label Content="Number of points:" Grid.Column="1" HorizontalAlignment="Left" Margin="10, 0" Grid.Row="1" VerticalAlignment="Bottom" Height="25" Width="107"/>
+        <Label Content="Number of classes:" Grid.Column="1" HorizontalAlignment="Left" Margin="10, 0" Grid.Row="3" VerticalAlignment="Bottom" Height="25" Width="110"/>
+        <Button Name="btnCalculate" Command="{Binding KMeansCommand}" Content="Calculate" Grid.Column="1" Margin="10, 12" Grid.Row="5" Background="LightSkyBlue"/>
+        <TextBox Name="tbNumOfPoints" Grid.Column="1" Margin="10, 6" Grid.Row="2" TextWrapping="Wrap" Text="{Binding NumberOfPoints, Mode=OneWayToSource}" Validation.ErrorTemplate="{x:Null}" PreviewTextInput="TextBox_CheckNumericInput"/>
+        <TextBox Name="tbNumOfClasses" Grid.Column="1" Margin="10, 6" Grid.Row="4" TextWrapping="Wrap" Text="{Binding NumberOfClasses, Mode=OneWayToSource}" Validation.ErrorTemplate="{x:Null}" PreviewTextInput="TextBox_CheckNumericInput"/>
+
+    </Grid>
+</Window>
