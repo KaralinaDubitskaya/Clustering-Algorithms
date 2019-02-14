@@ -23,7 +23,7 @@ namespace k_means
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new ApplicationViewModel();
+            DataContext = new ApplicationViewModel((int)Width, (int)Height);
         }
 
         // Allow only digits and backspace to be entered into the text box.

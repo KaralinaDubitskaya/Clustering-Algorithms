@@ -21,13 +21,13 @@
             <RowDefinition Height="171*"/>
         </Grid.RowDefinitions>
         <Border BorderThickness="1" BorderBrush="SkyBlue" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="7" Grid.Row="0" Margin="10">
-            <Image />
+            <Image Source="{Binding DrawingImage, Mode=OneWay}" />
         </Border>
         <Label Content="Number of points:" Grid.Column="1" HorizontalAlignment="Left" Margin="10, 0" Grid.Row="1" VerticalAlignment="Bottom" Height="25" Width="107"/>
         <Label Content="Number of classes:" Grid.Column="1" HorizontalAlignment="Left" Margin="10, 0" Grid.Row="3" VerticalAlignment="Bottom" Height="25" Width="110"/>
-        <Button Name="btnCalculate" Content="Calculate" Grid.Column="1" Margin="10, 12" Grid.Row="5" Background="LightSkyBlue"/>
-        <TextBox Name="tbNumOfPoints" Grid.Column="1" Margin="10, 6" Grid.Row="2" TextWrapping="Wrap" Text="30000" PreviewTextInput="TextBox_CheckNumericInput"/>
-        <TextBox Name="tbNumOfClasses" Grid.Column="1" Margin="10, 6" Grid.Row="4" TextWrapping="Wrap" Text="10" PreviewTextInput="TextBox_CheckNumericInput"/>
+        <Button Name="btnCalculate" Command="{Binding KMeansCommand}" Content="Calculate" Grid.Column="1" Margin="10, 12" Grid.Row="5" Background="LightSkyBlue"/>
+        <TextBox Name="tbNumOfPoints" Grid.Column="1" Margin="10, 6" Grid.Row="2" TextWrapping="Wrap" Text="{Binding NumberOfPoints, Mode=OneWayToSource}" Validation.ErrorTemplate="{x:Null}" PreviewTextInput="TextBox_CheckNumericInput"/>
+        <TextBox Name="tbNumOfClasses" Grid.Column="1" Margin="10, 6" Grid.Row="4" TextWrapping="Wrap" Text="{Binding NumberOfClasses, Mode=OneWayToSource}" Validation.ErrorTemplate="{x:Null}" PreviewTextInput="TextBox_CheckNumericInput"/>
 
     </Grid>
 </Window>

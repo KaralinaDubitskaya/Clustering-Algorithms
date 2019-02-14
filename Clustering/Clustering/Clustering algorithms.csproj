@@ -66,7 +66,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\Cluster.cs" />
     <Compile Include="Models\Command.cs" />
     <Compile Include="ViewModels\ApplicationViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
@@ -103,6 +102,11 @@
   <ItemGroup>
     <Resource Include="Resources\star.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\KMeans\KMeans.csproj">
+      <Project>{33f8f860-db3b-4d3f-9755-9fa7f4c919e5}</Project>
+      <Name>KMeans</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
