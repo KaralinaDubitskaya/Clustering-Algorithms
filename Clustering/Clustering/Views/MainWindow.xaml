@@ -12,22 +12,24 @@
             <ColumnDefinition Width="145*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="82*"/>
+            <RowDefinition Height="47*"/>
             <RowDefinition Height="32"/>
             <RowDefinition Height="32"/>
             <RowDefinition Height="32"/>
             <RowDefinition Height="32"/>
             <RowDefinition Height="52"/>
-            <RowDefinition Height="171*"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="78*"/>
         </Grid.RowDefinitions>
-        <Border BorderThickness="1" BorderBrush="SkyBlue" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="7" Grid.Row="0" Margin="10">
+        <Border BorderThickness="1" BorderBrush="SkyBlue" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="8" Grid.Row="0" Margin="10,10,9.8,10.4">
             <Image Source="{Binding DrawingImage, Mode=OneWay}" />
         </Border>
-        <Label Content="Number of points:" Grid.Column="1" HorizontalAlignment="Left" Margin="10, 0" Grid.Row="1" VerticalAlignment="Bottom" Height="25" Width="107"/>
-        <Label Content="Number of classes:" Grid.Column="1" HorizontalAlignment="Left" Margin="10, 0" Grid.Row="3" VerticalAlignment="Bottom" Height="25" Width="110"/>
-        <Button Name="btnCalculate" Command="{Binding KMeansCommand}" Content="Calculate" Grid.Column="1" Margin="10, 12" Grid.Row="5" Background="LightSkyBlue"/>
-        <TextBox Name="tbNumOfPoints" Grid.Column="1" Margin="10, 6" Grid.Row="2" TextWrapping="Wrap" Text="{Binding NumberOfPoints, Mode=OneWayToSource}" Validation.ErrorTemplate="{x:Null}" PreviewTextInput="TextBox_CheckNumericInput"/>
-        <TextBox Name="tbNumOfClasses" Grid.Column="1" Margin="10, 6" Grid.Row="4" TextWrapping="Wrap" Text="{Binding NumberOfClasses, Mode=OneWayToSource}" Validation.ErrorTemplate="{x:Null}" PreviewTextInput="TextBox_CheckNumericInput"/>
+        <Label Content="Number of points:" Grid.Column="1" HorizontalAlignment="Left" Margin="10.2,0,0,0.4" Grid.Row="1" VerticalAlignment="Bottom" Height="25" Width="107"/>
+        <Label Content="Number of classes:" Grid.Column="1" HorizontalAlignment="Left" Margin="10.2,0,0,0.4" Grid.Row="3" VerticalAlignment="Bottom" Height="25" Width="110"/>
+        <Button Name="btnKMeans" Command="{Binding KMeansCommand}" Content="k-means" Grid.Column="1" Margin="10.2,11.6,9.6,12.4" Grid.Row="5" Background="LightSkyBlue"/>
+        <Button Name="btnminMax" Command="{Binding MinMaxCommand}" Content="MinMax" Grid.Column="1" Margin="10.2,11.6,9.6,12.4" Grid.Row="6" Background="LightSkyBlue"/>
+        <TextBox Name="tbNumOfPoints" Grid.Column="1" Margin="10.2,5.6,9.6,6.4" Grid.Row="2" TextWrapping="Wrap" Text="{Binding NumberOfPoints, Mode=TwoWay}" Validation.ErrorTemplate="{x:Null}" PreviewTextInput="TextBox_CheckNumericInput"/>
+        <TextBox Name="tbNumOfClasses" Grid.Column="1" Margin="10.2,5.6,9.6,6.4" Grid.Row="4" TextWrapping="Wrap" Text="{Binding NumberOfClasses, Mode=TwoWay}" Validation.ErrorTemplate="{x:Null}" PreviewTextInput="TextBox_CheckNumericInput"/>
 
     </Grid>
 </Window>

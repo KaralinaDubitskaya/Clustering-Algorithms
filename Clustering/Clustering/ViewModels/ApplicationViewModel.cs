@@ -1,5 +1,7 @@
 ﻿using Clustering.Models;
+using ClusterModel;
 using KMeans;
+using MinMax;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +19,7 @@ namespace k_means
         private int _screenWidth;
         private int _screenHeight;
 
-        public int NumberOfPoints { get; set; }
+        public int NumberOfPoints { get; set; } 
         public int NumberOfClasses { get; set; }
 
         public DrawingImage DrawingImage { get; set; }
@@ -32,10 +34,23 @@ namespace k_means
             }
         }
 
+        private Command _minMaxCommand;
+        public Command MinMaxCommand
+        {
+            get
+            {
+                return _minMaxCommand ??
+                    (_minMaxCommand = new Command(MinMaxClustering));
+            }
+        }
+
         public ApplicationViewModel(int screenWidth, int screenHeight)
         {
             _screenWidth = screenWidth;
             _screenHeight = screenHeight;
+
+            NumberOfClasses = 10;
+            NumberOfPoints = 40000;
 
             DrawingImage = new DrawingImage();
         }
@@ -52,6 +67,28 @@ namespace k_means
             {
                 List<Point> points = GetRandomPoints(NumberOfPoints, _screenWidth, _screenHeight);
                 List<Cluster> clusters = KMeans.KMeans.Calculate(points, NumberOfClasses);
+                DisplayClusters(clusters);
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ooops, some error occured :(", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void MinMaxClustering()
+        {
+            try
+            {
+                List<Point> points = GetRandomPoints(NumberOfPoints, _screenWidth, _screenHeight);
+                List<Cluster> clusters = MinMax.MinMax.Calculate(points);
+
+                NumberOfClasses = clusters.Count;
+                OnPropertyChanged("NumberOfClasses");
+
                 DisplayClusters(clusters);
             }
             catch (ArgumentOutOfRangeException ex)

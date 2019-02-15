@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace KMeans
+namespace ClusterModel
 {
     // Represent group of points and defines it center.
     public class Cluster

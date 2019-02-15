@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{33F8F860-DB3B-4D3F-9755-9FA7F4C919E5}</ProjectGuid>
+    <ProjectGuid>{48DA1AC4-A77D-4C23-B94F-FE00CB3FDFD2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KMeans</RootNamespace>
-    <AssemblyName>KMeans</AssemblyName>
+    <RootNamespace>Cluster</RootNamespace>
+    <AssemblyName>Cluster</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,14 +42,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KMeans.cs" />
+    <Compile Include="Cluster.cs" />
+    <Compile Include="Clustering.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Cluster\ClusterModel.csproj">
-      <Project>{48da1ac4-a77d-4c23-b94f-fe00cb3fdfd2}</Project>
-      <Name>ClusterModel</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
