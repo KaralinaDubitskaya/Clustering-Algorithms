@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using ClusterModel;
 
 namespace KMeans
 {
-    public static class KMeans
+    public static class KMeans 
     {
         private const uint MIN_NUMBER_OF_POINTS = 1000;
         private const uint MAX_NUMBER_OF_POINTS = 100000;
@@ -43,9 +44,9 @@ namespace KMeans
                 do
                 {
                     // Delete all points except the central one.
-                    ClearClusters(clusters);
+                    Clustering.ClearClusters(clusters);
                     // Add each point to the nearest cluster.
-                    AddPointsToClusters(clusters, points);
+                    Clustering.AddPointsToClusters(clusters, points);
                     // Recalculate central points.
                     areCentersRecalculated = RecalculateCenters(clusters);
                 }
@@ -59,51 +60,7 @@ namespace KMeans
         {
             return points.ElementAt(random.Next(points.Count));
         }
-
-        // Deletes all points of the cluster, leaving the only central one.
-        private static void ClearClusters(List<Cluster> clusters)
-        {
-            foreach (var cluster in clusters)
-            {
-                cluster.Points = new List<Point> { cluster.Center };
-            }
-        }
-
-        // Distributes the points between the classes.
-        private static void AddPointsToClusters(IEnumerable<Cluster> clusters, IEnumerable<Point> points)
-        {
-            foreach (var point in points)
-            {
-                var cluster = GetCluster(point, clusters);
-                cluster?.Points.Add(point);
-            }
-        }
-
-        // Returns cluster for the point.
-        private static Cluster GetCluster(Point point, IEnumerable<Cluster> clusters)
-        {
-            double minDistance = Double.MaxValue;
-            Cluster resultCluster = null;
-
-            foreach (var cluster in clusters)
-            {
-                // Skip the point if it's a center of the cluster.
-                if (point == cluster.Center)
-                {
-                    return null;
-                }
-
-                double distance = cluster.GetDistance(point);
-                if (distance < minDistance)
-                {
-                    minDistance = distance;
-                    resultCluster = cluster;
-                }
-            }
-
-            return resultCluster;
-        }
-
+        
         // Returns true if after recalculating some clusters changed their centers. 
         private static bool RecalculateCenters(IEnumerable<Cluster> clusters)
         {

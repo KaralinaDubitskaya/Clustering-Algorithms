@@ -103,9 +103,17 @@
     <Resource Include="Resources\star.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Cluster\ClusterModel.csproj">
+      <Project>{48da1ac4-a77d-4c23-b94f-fe00cb3fdfd2}</Project>
+      <Name>ClusterModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KMeans\KMeans.csproj">
       <Project>{33f8f860-db3b-4d3f-9755-9fa7f4c919e5}</Project>
       <Name>KMeans</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MinMax\MinMax.csproj">
+      <Project>{70C0B9A5-2871-4936-BD4D-6A1F544DCEB2}</Project>
+      <Name>MinMax</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
